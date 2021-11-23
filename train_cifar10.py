@@ -39,7 +39,7 @@ aug = ImageDataGenerator(width_shift_range=0.1,
 
 # initialize the optimizer and model
 print("[INFO] compiling model...")
-opt = SGD(lr=config.MIN_LR, momentum=0.9)
+opt = SGD(learning_rate=config.MIN_LR, momentum=0.9)
 model = MiniGoogLeNet.build(width=32, height=32, depth=3, classes=10)
 model.compile(loss="categorical_crossentropy", optimizer=opt,
               metrics=["accuracy"])
